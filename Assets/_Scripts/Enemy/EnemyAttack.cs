@@ -20,13 +20,13 @@ public class EnemyAttack : MonoBehaviour
         {
             return;
         }
-        if (IsPlayerInRange() && CanAttack())
+        if (IsPlayerInAttackRange() && CanAttack())
         {
             Attack();
         }
     }
 
-    private bool IsPlayerInRange()
+    public bool IsPlayerInAttackRange()
     {
         float distanceToPlayer = Vector3.Distance(transform.position, player.position);
         return distanceToPlayer <= attackRange;
