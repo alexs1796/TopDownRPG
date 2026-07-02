@@ -20,14 +20,14 @@ public class Projectile : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        EnemyHealth enemyHealth = other.GetComponent<EnemyHealth>();
+        IDamageable damageable = other.GetComponent<IDamageable>();
 
-        if (enemyHealth == null)
+        if (damageable == null)
         {
             return;
         }
 
-        enemyHealth.TakeDamage(damage);
+        damageable.TakeDamage(damage);
         Destroy(gameObject);
     }
 }

@@ -1,9 +1,9 @@
 using UnityEngine;
 
-public class EnemyHealth : MonoBehaviour, IDamageable
+public class PlayerHealth : MonoBehaviour, IDamageable
 {
-    [SerializeField] private int maxHealth = 100;
-
+    [SerializeField] 
+    private int maxHealth = 150;
     private int currentHealth;
 
     private void Awake()
@@ -15,7 +15,7 @@ public class EnemyHealth : MonoBehaviour, IDamageable
     {
         currentHealth -= damage;
 
-        Debug.Log($"Enemy HP: {currentHealth}");
+        Debug.Log($"Player HP: {currentHealth}");
 
         if (currentHealth <= 0)
         {
